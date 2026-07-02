@@ -20,6 +20,7 @@
 | `frontend-presenter` | หน้าดูย้อนหลัง + standup view + แก้ด้วยมือ | ใช่ |
 | `code-reviewer` | ตรวจ bug/security/ความซับซ้อน | ไม่ (ตรวจอย่างเดียว) |
 | `tester` | test end-to-end | ใช่ |
+| `pr-author` | push + เปิด/เขียน PR บน GitHub (what/why/how + test plan) | ใช่ (git/gh) |
 
 ## Flow มาตรฐานของทีม
 
@@ -35,6 +36,7 @@ planner-architect → (integration | data-storage | llm-prompt | frontend) → t
 3. **ทุกครั้งที่แตะ logic การสรุป** → ต้องให้ `summary-quality-verifier` ตรวจว่าสรุปยังตรง commit จริง
 4. **งาน implement ที่เป็นอิสระต่อกัน** → spawn หลาย agent พร้อมกันได้ (parallel)
 5. **ก่อน commit งานที่มี runtime** → ให้ `tester` ยืนยัน end-to-end ก่อน
+6. **หลัง push branch** → ให้ `pr-author` เปิด/อัปเดต PR บน GitHub (ผ่าน `code-reviewer` + `tester` ก่อนถือว่าพร้อม review)
 
 ## หลักการทางเทคนิคที่ทั้งทีมยึด
 
